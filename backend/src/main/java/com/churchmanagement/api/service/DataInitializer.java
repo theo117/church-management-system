@@ -20,6 +20,7 @@ import com.churchmanagement.api.repository.FundRepository;
 import com.churchmanagement.api.repository.MemberRepository;
 import com.churchmanagement.api.repository.ReportMetricRepository;
 import com.churchmanagement.api.repository.VolunteerUpdateRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -28,6 +29,7 @@ import java.util.List;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
+    private final boolean seedData;
 
     private final MemberRepository memberRepository;
     private final AttendanceServiceRepository attendanceServiceRepository;
@@ -41,6 +43,7 @@ public class DataInitializer implements CommandLineRunner {
     private final ReportMetricRepository reportMetricRepository;
 
     public DataInitializer(
+        @Value("${app.seed-data:false}") boolean seedData,
         MemberRepository memberRepository,
         AttendanceServiceRepository attendanceServiceRepository,
         AttendanceTrendPointRepository attendanceTrendPointRepository,
@@ -52,6 +55,7 @@ public class DataInitializer implements CommandLineRunner {
         CommunicationRepository communicationRepository,
         ReportMetricRepository reportMetricRepository
     ) {
+        this.seedData = seedData;
         this.memberRepository = memberRepository;
         this.attendanceServiceRepository = attendanceServiceRepository;
         this.attendanceTrendPointRepository = attendanceTrendPointRepository;
@@ -66,6 +70,10 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        if (!seedData) {
+            return;
+        }
+
         if (memberRepository.count() > 0) {
             return;
         }
