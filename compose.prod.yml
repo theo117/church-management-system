@@ -15,7 +15,11 @@ services:
 
     networks:
       - proxy
+      - backend
 
 networks:
   proxy:
+    external: true
+
+  backend:
     external: true
