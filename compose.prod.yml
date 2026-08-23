@@ -1,0 +1,21 @@
+services:
+  church-api:
+    image: church-api:latest
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: church-api
+
+    restart: unless-stopped
+
+    env_file:
+      - .env.production
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
