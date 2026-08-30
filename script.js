@@ -13,7 +13,7 @@
   reports: []
 };
 
-const DEFAULT_API_BASE = "https://church.teodordev.co.za";
+const DEFAULT_API_BASE = "https://church.teodordev.co.za/api";
 const API_STORAGE_KEY = "cms_api_base_url";
 
 const apiEndpoints = {
