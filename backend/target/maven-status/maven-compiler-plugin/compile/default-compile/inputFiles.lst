@@ -1,40 +1,40 @@
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\ChurchManagementApplication.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\controller\ChurchManagementController.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\AttendanceService.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\AttendanceTrendPoint.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\CareAlert.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\ChurchEvent.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\Communication.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\Donation.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\Fund.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\Member.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\ReportMetric.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\domain\VolunteerUpdate.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\AttendanceServiceResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\CareAlertResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\CommunicationResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\CommunicationUpsertRequest.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\DonationResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\DonationUpsertRequest.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\EventResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\EventUpsertRequest.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\FundResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\KpiResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\MemberResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\MemberUpsertRequest.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\ReportResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\UpcomingEventResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\VolunteerResponse.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\dto\VolunteerUpsertRequest.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\AttendanceServiceRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\AttendanceTrendPointRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\CareAlertRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\ChurchEventRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\CommunicationRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\DonationRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\FundRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\MemberRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\ReportMetricRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\repository\VolunteerUpdateRepository.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\service\DashboardService.java
-C:\Users\theod\Documents\Java 2025\business\New folder\church-mangement-system\backend\src\main\java\com\churchmanagement\api\service\DataInitializer.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/ChurchManagementApplication.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/ChurchManagementController.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceService.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceTrendPoint.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/CareAlert.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ChurchEvent.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Communication.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Donation.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Fund.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Member.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ReportMetric.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/VolunteerUpdate.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/AttendanceServiceResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CareAlertResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationUpsertRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationUpsertRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventUpsertRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/FundResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/KpiResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberUpsertRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/ReportResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/UpcomingEventResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerUpsertRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceServiceRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceTrendPointRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CareAlertRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ChurchEventRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CommunicationRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/DonationRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/FundRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/MemberRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ReportMetricRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/VolunteerUpdateRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DashboardService.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DataInitializer.java
