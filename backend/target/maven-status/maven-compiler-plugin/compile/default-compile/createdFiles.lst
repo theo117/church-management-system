@@ -24,9 +24,11 @@ com/churchmanagement/api/dto/MemberResponse.class
 com/churchmanagement/api/repository/ChurchEventRepository.class
 com/churchmanagement/api/repository/AttendanceServiceRepository.class
 com/churchmanagement/api/dto/ReportResponse.class
+com/churchmanagement/api/config/CorsConfig$1.class
 com/churchmanagement/api/dto/DonationResponse.class
 com/churchmanagement/api/domain/ReportMetric.class
 com/churchmanagement/api/dto/EventResponse.class
+com/churchmanagement/api/config/CorsConfig.class
 com/churchmanagement/api/domain/VolunteerUpdate.class
 com/churchmanagement/api/repository/FundRepository.class
 com/churchmanagement/api/dto/AttendanceServiceResponse.class
