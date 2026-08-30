@@ -13,7 +13,7 @@
   reports: []
 };
 
-const DEFAULT_API_BASE = "https://church-management-system-1-65xs.onrender.com/api";
+const DEFAULT_API_BASE = "https://church.teodordev.co.za";
 const API_STORAGE_KEY = "cms_api_base_url";
 
 const apiEndpoints = {
