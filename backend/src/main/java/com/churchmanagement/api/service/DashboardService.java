@@ -107,36 +107,7 @@ public class DashboardService {
             .toList();
     }
 
-    public List<MemberResponse> members() {
-        return memberRepository.findAll().stream()
-            .map(member -> new MemberResponse(member.getId(), member.getName(), member.getStatus(), member.getMinistry(), member.getSmallGroup(), member.getLastAttended()))
-            .toList();
-    }
-
-    public MemberResponse createMember(MemberUpsertRequest request) {
-        Member member = new Member(
-            safe(request.name()),
-            safe(request.status()),
-            safe(request.ministry()),
-            safe(request.group()),
-            safe(request.lastAttended())
-        );
-        return toMemberResponse(memberRepository.save(member));
-    }
-
-    public MemberResponse updateMember(Long id, MemberUpsertRequest request) {
-        Member member = memberRepository.findById(id).orElseThrow();
-        member.setName(safe(request.name()));
-        member.setStatus(safe(request.status()));
-        member.setMinistry(safe(request.ministry()));
-        member.setSmallGroup(safe(request.group()));
-        member.setLastAttended(safe(request.lastAttended()));
-        return toMemberResponse(memberRepository.save(member));
-    }
-
-    public void deleteMember(Long id) {
-        memberRepository.deleteById(id);
-    }
+   
 
     public List<AttendanceServiceResponse> attendanceServices() {
         return attendanceServiceRepository.findAll().stream()
