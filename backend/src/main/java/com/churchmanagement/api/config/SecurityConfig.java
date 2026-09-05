@@ -43,12 +43,16 @@ public class SecurityConfig {
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/api/auth/**",
-                                "/actuator/health"
-                        ).permitAll()
-                        .anyRequest().authenticated()   // We'll secure this later
-                );
+        .requestMatchers(
+                "/api/auth/**",
+                "/actuator/health"
+        ).permitAll()
+
+        .requestMatchers("/api/admin/**")
+        .hasRole("ADMIN")
+
+        .anyRequest().authenticated()
+);
 http.addFilterBefore(
         jwtAuthenticationFilter,
         UsernamePasswordAuthenticationFilter.class
