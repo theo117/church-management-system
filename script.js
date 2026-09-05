@@ -1,4 +1,16 @@
-﻿const mockData = {
+﻿if (!localStorage.getItem("cms_jwt")) {
+    window.location.href = "login.html";
+}
+
+
+
+
+
+
+
+
+
+const mockData = {
   kpis: [],
   attendanceTrend: [],
   upcomingEvents: [],
