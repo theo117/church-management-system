@@ -42,5 +42,6 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/MemberRepository.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ReportMetricRepository.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/VolunteerUpdateRepository.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AuthenticationService.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DashboardService.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DataInitializer.java
