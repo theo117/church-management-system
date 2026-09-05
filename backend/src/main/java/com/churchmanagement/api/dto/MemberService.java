@@ -91,4 +91,13 @@ public class MemberService {
                 member.isEnabled()
         );
     }
+
+    public void deleteMember(Long id) {
+
+    if (!memberRepository.existsById(id)) {
+        throw new RuntimeException("Member not found");
+    }
+
+    memberRepository.deleteById(id);
+}
 }
