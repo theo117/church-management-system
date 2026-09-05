@@ -1,4 +1,5 @@
 com/churchmanagement/api/domain/AttendanceTrendPoint.class
+com/churchmanagement/api/security/JwtService.class
 com/churchmanagement/api/domain/Member.class
 com/churchmanagement/api/domain/Fund.class
 com/churchmanagement/api/repository/MemberRepository.class
