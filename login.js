@@ -27,6 +27,9 @@ document
                     })
                 });
 
+                console.log(response.status);
+console.log(await response.clone().text());
+
             if (!response.ok) {
                 throw new Error();
             }
