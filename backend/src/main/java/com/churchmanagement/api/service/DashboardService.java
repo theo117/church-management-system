@@ -3,7 +3,7 @@ package com.churchmanagement.api.service;
 import com.churchmanagement.api.domain.AttendanceTrendPoint;
 import com.churchmanagement.api.domain.ChurchEvent;
 import com.churchmanagement.api.domain.Donation;
-import com.churchmanagement.api.domain.Member;
+
 import com.churchmanagement.api.dto.AttendanceServiceResponse;
 import com.churchmanagement.api.dto.CareAlertResponse;
 import com.churchmanagement.api.dto.CommunicationResponse;
@@ -14,8 +14,8 @@ import com.churchmanagement.api.dto.EventResponse;
 import com.churchmanagement.api.dto.EventUpsertRequest;
 import com.churchmanagement.api.dto.FundResponse;
 import com.churchmanagement.api.dto.KpiResponse;
-import com.churchmanagement.api.dto.MemberResponse;
-import com.churchmanagement.api.dto.MemberUpsertRequest;
+
+
 import com.churchmanagement.api.dto.ReportResponse;
 import com.churchmanagement.api.dto.UpcomingEventResponse;
 import com.churchmanagement.api.dto.VolunteerResponse;
@@ -239,9 +239,7 @@ public class DashboardService {
             .toList();
     }
 
-    private MemberResponse toMemberResponse(Member member) {
-        return new MemberResponse(member.getId(), member.getName(), member.getStatus(), member.getMinistry(), member.getSmallGroup(), member.getLastAttended());
-    }
+  
 
     private EventResponse toEventResponse(ChurchEvent event) {
         return new EventResponse(
