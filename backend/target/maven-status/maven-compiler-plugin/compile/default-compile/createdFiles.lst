@@ -6,6 +6,7 @@ com/churchmanagement/api/repository/MemberRepository.class
 com/churchmanagement/api/domain/CareAlert.class
 com/churchmanagement/api/dto/MemberUpsertRequest.class
 com/churchmanagement/api/repository/VolunteerUpdateRepository.class
+com/churchmanagement/api/config/PasswordConfig.class
 com/churchmanagement/api/service/DataInitializer.class
 com/churchmanagement/api/dto/FundResponse.class
 com/churchmanagement/api/domain/Communication.class

@@ -1,5 +1,6 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/ChurchManagementApplication.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/CorsConfig.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/PasswordConfig.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/SecurityConfig.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/ChurchManagementController.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceService.java
