@@ -24,6 +24,8 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventUpsertRequest.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/FundResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/KpiResponse.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginRequest.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberUpsertRequest.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/ReportResponse.java
