@@ -32,7 +32,6 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberDetailsResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberRequest.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberService.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberUpsertRequest.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/ReportResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/UpcomingEventResponse.java
@@ -55,3 +54,4 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AuthenticationService.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DashboardService.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DataInitializer.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/MemberService.java
