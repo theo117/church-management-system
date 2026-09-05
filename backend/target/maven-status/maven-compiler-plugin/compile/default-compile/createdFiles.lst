@@ -24,6 +24,7 @@ com/churchmanagement/api/repository/FundRepository.class
 com/churchmanagement/api/config/SecurityConfig.class
 com/churchmanagement/api/dto/CommunicationResponse.class
 com/churchmanagement/api/dto/VolunteerResponse.class
+com/churchmanagement/api/controller/AdminController.class
 com/churchmanagement/api/dto/CommunicationUpsertRequest.class
 com/churchmanagement/api/domain/AttendanceService.class
 com/churchmanagement/api/service/DashboardService.class
