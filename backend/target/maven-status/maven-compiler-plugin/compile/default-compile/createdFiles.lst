@@ -3,6 +3,7 @@ com/churchmanagement/api/domain/Member.class
 com/churchmanagement/api/domain/Fund.class
 com/churchmanagement/api/repository/MemberRepository.class
 com/churchmanagement/api/dto/MemberUpsertRequest.class
+com/churchmanagement/api/controller/AuthController.class
 com/churchmanagement/api/repository/VolunteerUpdateRepository.class
 com/churchmanagement/api/dto/LoginRequest.class
 com/churchmanagement/api/dto/FundResponse.class
