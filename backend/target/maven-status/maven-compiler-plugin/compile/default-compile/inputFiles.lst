@@ -11,6 +11,7 @@
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Fund.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Member.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ReportMetric.java
+/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Role.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/VolunteerUpdate.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/AttendanceServiceResponse.java
 /home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CareAlertResponse.java

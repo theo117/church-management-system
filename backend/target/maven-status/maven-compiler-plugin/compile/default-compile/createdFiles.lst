@@ -38,6 +38,7 @@ com/churchmanagement/api/dto/CommunicationResponse.class
 com/churchmanagement/api/dto/VolunteerResponse.class
 com/churchmanagement/api/dto/CommunicationUpsertRequest.class
 com/churchmanagement/api/domain/AttendanceService.class
+com/churchmanagement/api/domain/Role.class
 com/churchmanagement/api/repository/CareAlertRepository.class
 com/churchmanagement/api/service/DashboardService.class
 com/churchmanagement/api/dto/VolunteerUpsertRequest.class
