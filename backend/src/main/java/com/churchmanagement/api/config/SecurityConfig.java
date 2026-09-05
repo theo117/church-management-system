@@ -1,5 +1,8 @@
 package com.churchmanagement.api.config;
 
+
+import com.churchmanagement.api.security.JwtAuthenticationFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import com.churchmanagement.api.security.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,8 +32,9 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(
-            HttpSecurity http,
-            AuthenticationProvider authenticationProvider) throws Exception {
+        HttpSecurity http,
+        AuthenticationProvider authenticationProvider,
+        JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
 
         http
                 .csrf(csrf -> csrf.disable())
@@ -43,8 +47,12 @@ public class SecurityConfig {
                                 "/api/auth/**",
                                 "/actuator/health"
                         ).permitAll()
-                        .anyRequest().permitAll()   // We'll secure this later
+                        .anyRequest().authenticated()   // We'll secure this later
                 );
+http.addFilterBefore(
+        jwtAuthenticationFilter,
+        UsernamePasswordAuthenticationFilter.class
+);
 
         return http.build();
     }

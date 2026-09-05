@@ -28,6 +28,7 @@ com/churchmanagement/api/dto/CommunicationUpsertRequest.class
 com/churchmanagement/api/domain/AttendanceService.class
 com/churchmanagement/api/service/DashboardService.class
 com/churchmanagement/api/dto/VolunteerUpsertRequest.class
+com/churchmanagement/api/security/JwtAuthenticationFilter.class
 com/churchmanagement/api/dto/EventUpsertRequest.class
 com/churchmanagement/api/domain/CareAlert.class
 com/churchmanagement/api/config/PasswordConfig.class
