@@ -16,7 +16,6 @@ public class AdminInitializer implements CommandLineRunner {
     public AdminInitializer(
             MemberRepository memberRepository,
             PasswordEncoder passwordEncoder) {
-
         this.memberRepository = memberRepository;
         this.passwordEncoder = passwordEncoder;
     }
@@ -31,17 +30,14 @@ public class AdminInitializer implements CommandLineRunner {
         Member admin = new Member();
 
         admin.setName("Administrator");
+        admin.setStatus("active");
         admin.setEmail("admin@church.local");
+        admin.setPasswordHash(passwordEncoder.encode("ChangeMe123!"));
         admin.setRole(Role.ADMIN);
         admin.setEnabled(true);
-        admin.setStatus("active");
-
-        admin.setPasswordHash(
-                passwordEncoder.encode("ChangeMe123!")
-        );
 
         memberRepository.save(admin);
 
-        System.out.println("Created default administrator account.");
+        System.out.println("✓ Default administrator created.");
     }
 }
