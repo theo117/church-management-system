@@ -10,7 +10,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+
 @Service
+
+
+public MemberDetailsResponse updateMember(Long id, MemberRequest request)
+
+public void deleteMember(Long id)
+
+
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
