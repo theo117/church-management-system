@@ -10,8 +10,7 @@ import com.churchmanagement.api.dto.EventResponse;
 import com.churchmanagement.api.dto.EventUpsertRequest;
 import com.churchmanagement.api.dto.FundResponse;
 import com.churchmanagement.api.dto.KpiResponse;
-import com.churchmanagement.api.dto.MemberResponse;
-import com.churchmanagement.api.dto.MemberUpsertRequest;
+
 import com.churchmanagement.api.dto.ReportResponse;
 import com.churchmanagement.api.dto.UpcomingEventResponse;
 import com.churchmanagement.api.dto.VolunteerResponse;
@@ -60,25 +59,7 @@ public class ChurchManagementController {
         return dashboardService.careAlerts();
     }
 
-    @GetMapping("/members")
-    public List<MemberResponse> getMembers() {
-        return dashboardService.members();
-    }
-
-    @PostMapping("/members")
-    public MemberResponse createMember(@RequestBody MemberUpsertRequest request) {
-        return dashboardService.createMember(request);
-    }
-
-    @PutMapping("/members/{id}")
-    public MemberResponse updateMember(@PathVariable Long id, @RequestBody MemberUpsertRequest request) {
-        return dashboardService.updateMember(id, request);
-    }
-
-    @DeleteMapping("/members/{id}")
-    public void deleteMember(@PathVariable Long id) {
-        dashboardService.deleteMember(id);
-    }
+    
 
     @GetMapping("/attendance/services")
     public List<AttendanceServiceResponse> getAttendanceServices() {
