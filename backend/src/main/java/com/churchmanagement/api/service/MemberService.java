@@ -10,17 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
-
 @Service
-
-
-public MemberDetailsResponse updateMember(Long id, MemberRequest request)
-
-public void deleteMember(Long id)
-
-
-
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -66,15 +56,42 @@ public class MemberService {
                         ? Role.MEMBER
                         : request.role());
 
-        member.setPasswordHash(
-                passwordEncoder.encode("ChangeMe123!")
-        );
-
+        member.setPasswordHash(passwordEncoder.encode("ChangeMe123!"));
         member.setEnabled(true);
 
         memberRepository.save(member);
 
         return toResponse(member);
+    }
+
+    public MemberDetailsResponse updateMember(Long id, MemberRequest request) {
+
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Member not found"));
+
+        member.setName(request.name());
+        member.setEmail(request.email());
+        member.setStatus(request.status());
+        member.setMinistry(request.ministry());
+        member.setSmallGroup(request.smallGroup());
+        member.setLastAttended(request.lastAttended());
+
+        if (request.role() != null) {
+            member.setRole(request.role());
+        }
+
+        memberRepository.save(member);
+
+        return toResponse(member);
+    }
+
+    public void deleteMember(Long id) {
+
+        if (!memberRepository.existsById(id)) {
+            throw new RuntimeException("Member not found");
+        }
+
+        memberRepository.deleteById(id);
     }
 
     private MemberDetailsResponse toResponse(Member member) {
@@ -91,13 +108,4 @@ public class MemberService {
                 member.isEnabled()
         );
     }
-
-    public void deleteMember(Long id) {
-
-    if (!memberRepository.existsById(id)) {
-        throw new RuntimeException("Member not found");
-    }
-
-    memberRepository.deleteById(id);
-}
 }
