@@ -20,6 +20,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
+
+@Configuration
+public class SecurityConfig {
+
+
 @Bean
 CorsConfigurationSource corsConfigurationSource() {
 
@@ -49,10 +55,6 @@ CorsConfigurationSource corsConfigurationSource() {
 
     return source;
 }
-
-@Configuration
-public class SecurityConfig {
-
     @Bean
     AuthenticationProvider authenticationProvider(
             CustomUserDetailsService userDetailsService,
