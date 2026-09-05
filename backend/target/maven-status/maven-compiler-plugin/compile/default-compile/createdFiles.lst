@@ -46,5 +46,6 @@ com/churchmanagement/api/security/CustomUserDetailsService.class
 com/churchmanagement/api/dto/LoginResponse.class
 com/churchmanagement/api/dto/AttendanceServiceResponse.class
 com/churchmanagement/api/repository/CommunicationRepository.class
+com/churchmanagement/api/service/AdminInitializer.class
 com/churchmanagement/api/domain/Role.class
 com/churchmanagement/api/repository/CareAlertRepository.class
