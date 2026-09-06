@@ -508,12 +508,13 @@ function setupCrudForms() {
     event.preventDefault();
     const id = document.getElementById("memberId").value;
     const payload = {
-      name: document.getElementById("memberName").value,
-      status: document.getElementById("memberStatus").value,
-      ministry: document.getElementById("memberMinistry").value,
-      group: document.getElementById("memberGroup").value,
-      lastAttended: document.getElementById("memberLastAttended").value
-    };
+    name: document.getElementById("memberName").value,
+    email: document.getElementById("memberEmail").value,
+    status: document.getElementById("memberStatus").value,
+    ministry: document.getElementById("memberMinistry").value,
+    smallGroup: document.getElementById("memberGroup").value,
+    lastAttended: document.getElementById("memberLastAttended").value
+};
     await apiRequest(id ? `/members/${id}` : "/members", {
     method: id ? "PUT" : "POST",
     body: JSON.stringify(payload)
