@@ -733,7 +733,7 @@ function setupAddRecordShortcut() {
 
   async function init() {
     console.count("init");
-  }
+  
   setDataBadge("mock", "Data: Mock");
   renderAll();
   setupMemberFilters();
@@ -743,6 +743,6 @@ function setupAddRecordShortcut() {
   setupAddRecordShortcut();
   setApiStatus("Syncing with API...");
   await syncDataFromApi();
-
+  }
 
 init();
