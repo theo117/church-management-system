@@ -211,8 +211,9 @@ async function apiRequest(endpoint, options = {}) {
 
     const token = localStorage.getItem("cms_jwt");
 
-    const response = await fetch(`${API_BASE}${endpoint}`, {
-        ...options,
+    const apiBase = getApiBaseUrl();
+
+const response = await fetch(`${apiBase}${endpoint}`, {
         headers: {
             "Content-Type": "application/json",
             ...(token
