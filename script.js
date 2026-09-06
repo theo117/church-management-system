@@ -732,7 +732,7 @@ function setupAddRecordShortcut() {
   });
 }
 
-async function init() {
+
   async function init() {
     console.count("init");
   }
