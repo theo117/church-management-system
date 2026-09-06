@@ -534,7 +534,10 @@ function setupCrudForms() {
       seatsTotal: Number(document.getElementById("eventSeatsTotal").value),
       upcoming: document.getElementById("eventUpcoming").checked
     };
-    await apiRequest(id ? `/events/${id}` : "/events", id ? "PUT" : "POST", payload);
+    await apiRequest(id ? `/events/${id}` : "/events", {
+    method: id ? "PUT" : "POST",
+    body: JSON.stringify(payload)
+});
     resetEventForm();
     await syncDataFromApi();
   });
