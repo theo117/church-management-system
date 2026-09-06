@@ -252,6 +252,13 @@ async function syncDataFromApi() {
   const keys = Object.keys(apiEndpoints);
   const results = await Promise.allSettled(
     keys.map(async (key) => {
+      keys.map(async (key) => {
+    console.log("Requesting:", key, apiEndpoints[key]);
+
+    const payload = await apiRequest(apiEndpoints[key]);
+
+    return [key, normalizeRecord(key, payload)];
+})
       const payload = await apiRequest(apiEndpoints[key]);
       return [key, normalizeRecord(key, payload)];
     })
