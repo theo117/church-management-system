@@ -221,30 +221,22 @@ async function apiRequest(endpoint, options = {}) {
             ...(options.headers || {})
         }
     });
+
     if (response.status === 401) {
+        localStorage.removeItem("cms_jwt");
+        window.location.href = "login.html";
+        return;
+    }
 
-    localStorage.removeItem("cms_jwt");
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
 
-    window.location.href = "login.html";
+    if (response.status === 204) {
+        return null;
+    }
 
-    return;
-}
-
-if (response.status === 401) {
-    localStorage.removeItem("cms_jwt");
-    window.location.href = "login.html";
-    return;
-}
-
-if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-}
-
-if (response.status === 204) {
-    return null;
-}
-
-return response.json();
+    return response.json();
 }
 
 
