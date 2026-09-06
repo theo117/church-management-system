@@ -618,7 +618,9 @@ function setupCrudForms() {
 
     if (action === "delete-member" && id) {
       if (!confirm("Delete this member?")) return;
-      await apiRequest(`/members/${id}`, "DELETE");
+      await apiRequest(`/members/${id}`, {
+    method: "DELETE"
+});
       await syncDataFromApi();
     }
 
