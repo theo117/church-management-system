@@ -516,7 +516,10 @@ function setupCrudForms() {
       group: document.getElementById("memberGroup").value,
       lastAttended: document.getElementById("memberLastAttended").value
     };
-    await apiRequest(id ? `/members/${id}` : "/members", id ? "PUT" : "POST", payload);
+    await apiRequest(id ? `/members/${id}` : "/members", {
+    method: id ? "PUT" : "POST",
+    body: JSON.stringify(payload)
+});
     resetMemberForm();
     await syncDataFromApi();
   });
