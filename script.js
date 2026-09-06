@@ -659,7 +659,9 @@ function setupCrudForms() {
 
     if (action === "delete-donation" && id) {
       if (!confirm("Delete this donation?")) return;
-      await apiRequest(`/donations/${id}`, "DELETE");
+      await apiRequest(`/donations/${id}`, {
+    method: "DELETE"
+});
       await syncDataFromApi();
     }
 
