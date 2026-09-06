@@ -217,6 +217,14 @@ async function apiRequest(endpoint, options = {}) {
             ...(options.headers || {})
         }
     });
+    if (response.status === 401) {
+
+    localStorage.removeItem("cms_jwt");
+
+    window.location.href = "login.html";
+
+    return;
+}
 
     return response;
 }
