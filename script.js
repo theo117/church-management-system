@@ -241,8 +241,13 @@ async function apiRequest(endpoint, options = {}) {
 
 
 async function syncDataFromApi() {
-  const apiBase = getApiBaseUrl();
-  appData = structuredClone(mockData);
+    console.log("syncDataFromApi() started");
+
+    const apiBase = getApiBaseUrl();
+    console.log("API Base:", apiBase);
+
+    appData = structuredClone(mockData);
+    
 
   const keys = Object.keys(apiEndpoints);
   const results = await Promise.allSettled(
