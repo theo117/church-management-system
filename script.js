@@ -206,14 +206,13 @@ function normalizeRecord(key, payload) {
       return normalizeArray(payload, mockData[key]);
   }
 }
-
 async function apiRequest(endpoint, options = {}) {
 
     const token = localStorage.getItem("cms_jwt");
-
     const apiBase = getApiBaseUrl();
 
-const response = await fetch(`${apiBase}${endpoint}`, {
+    const response = await fetch(`${apiBase}${endpoint}`, {
+        ...options,
         headers: {
             "Content-Type": "application/json",
             ...(token
@@ -239,7 +238,6 @@ const response = await fetch(`${apiBase}${endpoint}`, {
 
     return response.json();
 }
-
 
 async function syncDataFromApi() {
     console.log("syncDataFromApi() started");
