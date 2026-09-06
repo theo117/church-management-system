@@ -240,6 +240,7 @@ async function apiRequest(endpoint, options = {}) {
 }
 
 async function syncDataFromApi() {
+  console.trace("syncDataFromApi called");
     console.log("syncDataFromApi() started");
 
     const apiBase = getApiBaseUrl();
