@@ -551,7 +551,10 @@ function setupCrudForms() {
       amount: Number(document.getElementById("donationAmount").value),
       date: document.getElementById("donationDate").value
     };
-    await apiRequest(id ? `/donations/${id}` : "/donations", id ? "PUT" : "POST", payload);
+    await apiRequest(id ? `/donations/${id}` : "/donations", {
+    method: id ? "PUT" : "POST",
+    body: JSON.stringify(payload)
+});
     resetDonationForm();
     await syncDataFromApi();
   });
