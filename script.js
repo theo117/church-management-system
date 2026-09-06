@@ -230,19 +230,23 @@ async function apiRequest(endpoint, options = {}) {
     return;
 }
 
-    return response;
+if (response.status === 401) {
+    localStorage.removeItem("cms_jwt");
+    window.location.href = "login.html";
+    return;
 }
 
-  if (!response.ok) {
+if (!response.ok) {
     throw new Error(`HTTP ${response.status}`);
-  }
-
-  if (response.status === 204) {
-    return null;
-  }
-
-  return response.json();
 }
+
+if (response.status === 204) {
+    return null;
+}
+
+return response.json();
+}
+
 
 async function syncDataFromApi() {
   const apiBase = getApiBaseUrl();
