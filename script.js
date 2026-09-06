@@ -1,4 +1,8 @@
-﻿if (!localStorage.getItem("cms_jwt")) {
+﻿console.log("script.js loaded");
+
+
+
+if (!localStorage.getItem("cms_jwt")) {
     window.location.href = "login.html";
 }
 
