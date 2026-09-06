@@ -1,12 +1,16 @@
 package com.churchmanagement.api.service;
 
+import java.util.List;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.churchmanagement.api.domain.Member;
 import com.churchmanagement.api.dto.LoginRequest;
 import com.churchmanagement.api.dto.LoginResponse;
 import com.churchmanagement.api.repository.MemberRepository;
 import com.churchmanagement.api.security.JwtService;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationService {
@@ -35,11 +39,15 @@ public class AuthenticationService {
         }
 
         org.springframework.security.core.userdetails.User user =
-                new org.springframework.security.core.userdetails.User(
-                        member.getEmail(),
-                        member.getPasswordHash(),
-                        java.util.List.of()
-                );
+        new org.springframework.security.core.userdetails.User(
+                member.getEmail(),
+                member.getPasswordHash(),
+                List.of(
+                        new SimpleGrantedAuthority(
+                                "ROLE_" + member.getRole().name()
+                        )
+                )
+        );
 
         String token = jwtService.generateToken(user);
 
