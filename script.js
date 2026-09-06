@@ -640,7 +640,9 @@ function setupCrudForms() {
 
     if (action === "delete-event" && id) {
       if (!confirm("Delete this event?")) return;
-      await apiRequest(`/events/${id}`, "DELETE");
+      await apiRequest(`/events/${id}`, {
+    method: "DELETE"
+});
       await syncDataFromApi();
     }
 
