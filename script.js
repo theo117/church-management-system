@@ -565,7 +565,10 @@ function setupCrudForms() {
     const payload = {
       message: document.getElementById("volunteerMessage").value
     };
-    await apiRequest(id ? `/volunteers/${id}` : "/volunteers", id ? "PUT" : "POST", payload);
+    await apiRequest(id ? `/volunteers/${id}` : "/volunteers", {
+    method: id ? "PUT" : "POST",
+    body: JSON.stringify(payload)
+});
     resetVolunteerForm();
     await syncDataFromApi();
   });
