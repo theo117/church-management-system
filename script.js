@@ -581,7 +581,10 @@ function setupCrudForms() {
       audience: document.getElementById("communicationAudience").value,
       status: document.getElementById("communicationStatus").value
     };
-    await apiRequest(id ? `/communications/${id}` : "/communications", id ? "PUT" : "POST", payload);
+    await apiRequest(id ? `/communications/${id}` : "/communications", {
+    method: id ? "PUT" : "POST",
+    body: JSON.stringify(payload)
+});
     resetCommunicationForm();
     await syncDataFromApi();
   });
