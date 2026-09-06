@@ -733,6 +733,9 @@ function setupAddRecordShortcut() {
 }
 
 async function init() {
+  async function init() {
+    console.count("init");
+  }
   setDataBadge("mock", "Data: Mock");
   renderAll();
   setupMemberFilters();
