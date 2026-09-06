@@ -693,7 +693,9 @@ function setupCrudForms() {
 
     if (action === "delete-communication" && id) {
       if (!confirm("Delete this communication item?")) return;
-      await apiRequest(`/communications/${id}`, "DELETE");
+      await apiRequest(`/communications/${id}`, {
+    method: "DELETE"
+});
       await syncDataFromApi();
     }
   });
