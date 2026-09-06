@@ -47,6 +47,8 @@ public MemberDetailsResponse updateMember(
         @PathVariable Long id,
         @RequestBody MemberRequest request) {
 
+            System.out.println(">>> UPDATE MEMBER HIT");
+
     return memberService.updateMember(id, request);
 }
 
