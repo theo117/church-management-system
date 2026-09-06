@@ -743,6 +743,6 @@ function setupAddRecordShortcut() {
   setupAddRecordShortcut();
   setApiStatus("Syncing with API...");
   await syncDataFromApi();
-}
+
 
 init();
