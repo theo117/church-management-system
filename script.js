@@ -675,7 +675,9 @@ function setupCrudForms() {
 
     if (action === "delete-volunteer" && id) {
       if (!confirm("Delete this volunteer update?")) return;
-      await apiRequest(`/volunteers/${id}`, "DELETE");
+      await apiRequest(`/volunteers/${id}`, {
+    method: "DELETE"
+});
       await syncDataFromApi();
     }
 
