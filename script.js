@@ -203,12 +203,23 @@ function normalizeRecord(key, payload) {
   }
 }
 
-async function apiRequest(path, method = "GET", body) {
-  const response = await fetch(`${getApiBaseUrl()}${path}`, {
-    method,
-    headers: { "Content-Type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined
-  });
+async function apiRequest(endpoint, options = {}) {
+
+    const token = localStorage.getItem("cms_jwt");
+
+    const response = await fetch(`${API_BASE}${endpoint}`, {
+        ...options,
+        headers: {
+            "Content-Type": "application/json",
+            ...(token
+                ? { Authorization: `Bearer ${token}` }
+                : {}),
+            ...(options.headers || {})
+        }
+    });
+
+    return response;
+}
 
   if (!response.ok) {
     throw new Error(`HTTP ${response.status}`);
