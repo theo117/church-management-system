@@ -1,4 +1,4 @@
-﻿console.log("script.js loaded");
+﻿console.count("script.js loaded");
 
 
 
