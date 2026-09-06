@@ -610,6 +610,8 @@ function setupCrudForms() {
       if (!record) return;
       document.getElementById("memberId").value = record.id;
       document.getElementById("memberName").value = record.name;
+      document.getElementById("memberEmail").value = member.email;
+      document.getElementById("memberGroup").value = member.smallGroup;
       document.getElementById("memberStatus").value = record.status;
       document.getElementById("memberMinistry").value = record.ministry;
       document.getElementById("memberGroup").value = record.group;
