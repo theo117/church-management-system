@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
@@ -38,12 +39,12 @@
       </div>
     </aside>
 
-    <main class="main-area">
+    <main class="main-area" id="mainContent" tabindex="-1">
       <header class="topbar">
         <div class="topbar-left">
           <button class="icon-btn" id="menuToggle" aria-label="Toggle navigation">Menu</button>
           <div>
-            <h1 id="viewTitle">Dashboard</h1>
+            <h1 id="viewTitle" tabindex="-1">Dashboard</h1>
             <p id="viewSubtitle">Overview of church health and ministry activity</p>
           </div>
         </div>
@@ -59,22 +60,32 @@
       </header>
 
       <section class="content-view active" data-view="dashboard">
+        <div class="panel-head dashboard-toolbar">
+          <p class="muted-note" id="dashboardStatus" role="status" aria-live="polite"></p>
+          <button type="button" class="icon-btn" id="dashboardRefreshBtn">Refresh Dashboard</button>
+        </div>
+        <p class="muted-note dashboard-panel-status" id="kpiGridStatus" role="status" aria-live="polite" hidden></p>
+        <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="kpis" hidden>Retry</button>
         <div class="kpi-grid" id="kpiGrid"></div>
 
         <div class="two-col">
           <article class="panel">
             <div class="panel-head">
               <h2>Weekly Attendance Trend</h2>
-              <span class="badge">Last 12 Weeks</span>
+              <span class="badge" id="attendanceRangeLabel">Last 12 Weeks</span>
             </div>
-            <div class="sparkline" id="attendanceSparkline" aria-label="Attendance trend chart"></div>
+            <p class="muted-note dashboard-panel-status" id="attendanceSparklineStatus" role="status" aria-live="polite" hidden></p>
+            <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="attendanceTrend" hidden>Retry</button>
+            <div class="sparkline" id="attendanceSparkline" role="img" aria-label="Attendance trend chart"></div>
           </article>
 
           <article class="panel">
             <div class="panel-head">
               <h2>Upcoming Events</h2>
-              <span class="badge">Next 30 Days</span>
+              <span class="badge">Upcoming</span>
             </div>
+            <p class="muted-note dashboard-panel-status" id="upcomingEventsStatus" role="status" aria-live="polite" hidden></p>
+            <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="upcomingEvents" hidden>Retry</button>
             <ul class="list" id="upcomingEvents"></ul>
           </article>
         </div>
@@ -84,8 +95,30 @@
             <h2>Prayer & Care Alerts</h2>
             <span class="badge warning">Needs Follow-up</span>
           </div>
+          <p class="muted-note dashboard-panel-status" id="careAlertsStatus" role="status" aria-live="polite" hidden></p>
+          <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="careAlerts" hidden>Retry</button>
           <div class="cards" id="careAlerts"></div>
         </article>
+        <div class="two-col">
+          <article class="panel">
+            <div class="panel-head">
+              <h2>Recent Donations</h2>
+              <span class="badge">Latest 5 records</span>
+            </div>
+            <p class="muted-note dashboard-panel-status" id="recentDonationsStatus" role="status" aria-live="polite" hidden></p>
+            <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="donations" hidden>Retry</button>
+            <ul class="list" id="recentDonations"></ul>
+          </article>
+          <article class="panel">
+            <div class="panel-head">
+              <h2>Volunteer Requests</h2>
+              <span class="badge">Requests &amp; Updates</span>
+            </div>
+            <p class="muted-note dashboard-panel-status" id="dashboardVolunteersStatus" role="status" aria-live="polite" hidden></p>
+            <button type="button" class="icon-btn dashboard-retry" data-dashboard-retry="volunteers" hidden>Retry</button>
+            <ul class="list" id="dashboardVolunteers"></ul>
+          </article>
+        </div>
       </section>
 
       <section class="content-view" data-view="members">
@@ -96,42 +129,45 @@
           </div>
           <form class="crud-form" id="memberForm">
             <input type="hidden" id="memberId" />
-            <input type="text" id="memberName" placeholder="Full name" required />
+            <input type="text" id="memberName" autocomplete="name" placeholder="Full name" required maxlength="255" />
             <input
     type="email"
-    id="memberEmail"
+    id="memberEmail" autocomplete="email"
     placeholder="Email"
-    required />
-            <select id="memberStatus" required>
+    required maxlength="255" />
+            <select id="memberStatus" aria-label="Member status" required>
               <option value="active">Active</option>
               <option value="new">New</option>
               <option value="inactive">Inactive</option>
             </select>
-            <input type="text" id="memberMinistry" placeholder="Ministry" required />
-            <input type="text" id="memberGroup" placeholder="Small group" required />
-            <input type="text" id="memberLastAttended" placeholder="Last attended (e.g., Feb 9)" required />
+            <input type="text" id="memberMinistry" placeholder="Ministry" required maxlength="255" />
+            <input type="text" id="memberGroup" placeholder="Small group" required maxlength="255" />
+            <input type="text" id="memberLastAttended" placeholder="Last attended (e.g., Feb 9)" required maxlength="255" />
             <button type="submit" class="primary-btn" id="memberSubmitBtn">Save Member</button>
             <button type="button" class="icon-btn" id="memberCancelBtn">Cancel</button>
           </form>
           <div class="toolbar">
-            <input type="text" id="memberSearch" placeholder="Search by name, ministry, status" />
-            <select id="memberStatusFilter">
+            <input type="text" id="memberSearch" aria-label="Search members" placeholder="Search by name, ministry, status" maxlength="255" />
+            <select id="memberStatusFilter" aria-label="Filter members by status">
               <option value="all">All Statuses</option>
               <option value="active">Active</option>
               <option value="new">New</option>
               <option value="inactive">Inactive</option>
             </select>
           </div>
-          <div class="table-wrap">
-            <table>
+          <p class="result-count" id="memberResultCount" role="status" aria-live="polite"></p>
+          <p class="table-scroll-hint">Scroll horizontally to see all columns.</p>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Member directory table">
+            <table id="memberTable">
+              <caption class="sr-only">Member directory</caption>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Status</th>
-                  <th>Ministry</th>
-                  <th>Small Group</th>
-                  <th>Last Attended</th>
-                  <th>Actions</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Ministry</th>
+                  <th scope="col">Small Group</th>
+                  <th scope="col">Last Attended</th>
+                  <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody id="memberTableBody"></tbody>
@@ -158,10 +194,10 @@
           </div>
           <form class="crud-form" id="eventForm">
             <input type="hidden" id="eventId" />
-            <input type="text" id="eventName" placeholder="Event name" required />
-            <input type="text" id="eventOwner" placeholder="Owner ministry" required />
+            <input type="text" id="eventName" placeholder="Event name" required maxlength="255" />
+            <input type="text" id="eventOwner" placeholder="Owner ministry" required maxlength="255" />
             <input type="number" id="eventProgress" placeholder="Progress %" min="0" max="100" required />
-            <input type="text" id="eventDate" placeholder="Date label (e.g., Mar 10)" required />
+            <input type="text" id="eventDate" placeholder="Date label (e.g., Mar 10)" required maxlength="255" />
             <input type="number" id="eventSeatsTaken" placeholder="Seats taken" min="0" required />
             <input type="number" id="eventSeatsTotal" placeholder="Seats total" min="0" required />
             <label class="checkline">
@@ -171,7 +207,9 @@
             <button type="submit" class="primary-btn" id="eventSubmitBtn">Save Event</button>
             <button type="button" class="icon-btn" id="eventCancelBtn">Cancel</button>
           </form>
-          <div class="cards" id="eventCards"></div>
+          <p class="muted-note" id="eventStatus" role="status" aria-live="polite"></p>
+          <button type="button" class="icon-btn" id="eventRefreshBtn">Refresh Events</button>
+          <div class="cards" id="eventCards" aria-busy="false"></div>
         </article>
       </section>
 
@@ -183,28 +221,36 @@
           </div>
           <form class="crud-form" id="donationForm">
             <input type="hidden" id="donationId" />
-            <input type="text" id="donationDonor" placeholder="Donor name" required />
-            <input type="text" id="donationFund" placeholder="Fund name" required />
-            <input type="number" id="donationAmount" placeholder="Amount (R)" min="0" step="1" required />
-            <input type="text" id="donationDate" placeholder="Date label (e.g., Feb 9)" required />
+            <input type="text" id="donationDonor" placeholder="Donor name" required maxlength="255" />
+            <input type="text" id="donationFund" placeholder="Fund name" required maxlength="255" />
+            <input type="number" id="donationAmount" placeholder="Amount (R)" min="0.01" step="0.01" required />
+            <input type="text" id="donationDate" placeholder="Date label (e.g., Feb 9)" required maxlength="255" />
             <button type="submit" class="primary-btn" id="donationSubmitBtn">Save Donation</button>
             <button type="button" class="icon-btn" id="donationCancelBtn">Cancel</button>
           </form>
+          <div class="toolbar">
+            <input type="search" id="donationSearch" aria-label="Search donations" placeholder="Search by donor, fund, or date" />
+          </div>
+          <p class="result-count" id="donationResultCount" role="status" aria-live="polite"></p>
           <div class="split-grid">
             <div id="fundProgress"></div>
-            <div class="table-wrap compact">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Donor</th>
-                    <th>Fund</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="donationTableBody"></tbody>
-              </table>
+            <div class="donation-table-section">
+              <p class="table-scroll-hint">Scroll horizontally to see all columns.</p>
+              <div class="table-wrap compact" tabindex="0" role="region" aria-label="Donation records table">
+                <table id="donationTable">
+                  <caption class="sr-only">Donation records</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Donor</th>
+                      <th scope="col">Fund</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="donationTableBody"></tbody>
+                </table>
+              </div>
             </div>
           </div>
         </article>
@@ -218,7 +264,7 @@
           </div>
           <form class="crud-form" id="volunteerForm">
             <input type="hidden" id="volunteerId" />
-            <input type="text" id="volunteerMessage" placeholder="Volunteer update message" required />
+            <input type="text" id="volunteerMessage" placeholder="Volunteer update message" required maxlength="255" />
             <button type="submit" class="primary-btn" id="volunteerSubmitBtn">Save Volunteer Update</button>
             <button type="button" class="icon-btn" id="volunteerCancelBtn">Cancel</button>
           </form>
@@ -234,9 +280,9 @@
           </div>
           <form class="crud-form" id="communicationForm">
             <input type="hidden" id="communicationId" />
-            <input type="text" id="communicationChannel" placeholder="Channel name" required />
-            <input type="text" id="communicationAudience" placeholder="Audience" required />
-            <input type="text" id="communicationStatus" placeholder="Status" required />
+            <input type="text" id="communicationChannel" placeholder="Channel name" required maxlength="255" />
+            <input type="text" id="communicationAudience" placeholder="Audience" required maxlength="255" />
+            <input type="text" id="communicationStatus" placeholder="Status" required maxlength="255" />
             <button type="submit" class="primary-btn" id="communicationSubmitBtn">Save Communication</button>
             <button type="button" class="icon-btn" id="communicationCancelBtn">Cancel</button>
           </form>
@@ -263,11 +309,11 @@
           <form class="settings-grid">
             <label>
               Church Name
-              <input type="text" value="Grace Church" />
+              <input type="text" value="Grace Church" maxlength="255" />
             </label>
             <label>
               Main Contact Email
-              <input type="email" value="office@gracechurch.org" />
+              <input type="email" value="office@gracechurch.org" maxlength="255" />
             </label>
             <label>
               Default Service Day
@@ -294,12 +340,13 @@
               <button type="button" class="icon-btn" id="syncNowBtn">Sync Now</button>
             </div>
           </form>
-          <p class="muted-note" id="apiStatusText">API not connected yet. Mock data is active.</p>
+          <p class="muted-note" id="apiStatusText" role="status" aria-live="polite">API not connected yet. Mock data is active.</p>
         </article>
       </section>
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/app.js"></script>
+<div id="toastRegion" class="toast-region" aria-live="polite" aria-relevant="additions" aria-label="Notifications"></div>
 </body>
 </html>

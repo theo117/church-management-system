@@ -18,28 +18,32 @@
 
         <input
             id="email"
+            aria-label="Email"
+            autocomplete="username"
             type="email"
             placeholder="Email"
             required>
 
         <input
             id="password"
+            aria-label="Password"
+            autocomplete="current-password"
             type="password"
             placeholder="Password"
             required>
 
-        <button type="submit">
+        <button type="submit" class="primary-btn">
             Sign In
         </button>
 
     </form>
 
-    <p id="loginError"></p>
+    <p id="loginError" class="form-feedback" role="alert" aria-live="polite"></p>
 
 </div>
 
-<script src="auth.js"></script>
-<script src="login.js"></script>
+<script type="module" src="login.js"></script>
 
+<div id="toastRegion" class="toast-region" aria-live="polite" aria-relevant="additions" aria-label="Notifications"></div>
 </body>
 </html>

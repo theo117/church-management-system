@@ -1,50 +1,37 @@
-const API_BASE = "https://church.teodordev.co.za/api";
+import { saveToken } from "./js/auth.js";
+import { requestLogin } from "./js/api.js";
+import { enhanceForm, validateForm } from "./js/forms.js";
+import { setFormBusy, getRequestErrorMessage } from "./js/feedback.js";
 
-document
-    .getElementById("loginForm")
-    .addEventListener("submit", async (event) => {
-
-        event.preventDefault();
-
-        const email =
-            document.getElementById("email").value;
-
-        const password =
-            document.getElementById("password").value;
-
-        try {
-
-            const response = await fetch(
-                `${API_BASE}/auth/login`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        email,
-                        password
-                    })
-                });
-
-                console.log(response.status);
-console.log(await response.clone().text());
-
-            if (!response.ok) {
-                throw new Error();
-            }
-
-            const data = await response.json();
-
-            saveToken(data.token);
-
-            window.location.href = "index.html";
-
-        } catch {
-
-            document.getElementById("loginError").textContent =
-                "Invalid email or password.";
-
-        }
-
-    });
+const loginForm = document.getElementById("loginForm");
+enhanceForm(loginForm);
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (
+    loginForm.getAttribute("aria-busy") === "true" ||
+    !validateForm(loginForm)
+  )
+    return;
+  const errorText = document.getElementById("loginError");
+  errorText.textContent = "";
+  const credentials = {
+    email: document.getElementById("email").value.trim(),
+    password: document.getElementById("password").value,
+  };
+  setFormBusy(loginForm, true);
+  try {
+    const session = await requestLogin(credentials);
+    if (!session || typeof session.token !== "string" || !session.token)
+      throw new Error("Invalid login response");
+    saveToken(session.token);
+    window.location.href = "index.html";
+  } catch (error) {
+    errorText.textContent = ["HTTP 400", "HTTP 401", "HTTP 403"].includes(
+      error.message,
+    )
+      ? "Invalid email or password."
+      : getRequestErrorMessage(error);
+  } finally {
+    setFormBusy(loginForm, false);
+  }
+});
