@@ -255,7 +255,15 @@ public class DashboardService {
     }
 
     private DonationResponse toDonationResponse(Donation donation) {
-        return new DonationResponse(donation.getId(), donation.getDonor(), donation.getFund(), formatCurrency(donation.getAmount()), donation.getDonationDate());
+        return new DonationResponse(donation.getId(), donation.getDonor(), donation.getFund(), formatDonationAmount(donation.getAmount()), donation.getDonationDate());
+    }
+
+    private String formatDonationAmount(BigDecimal amount) {
+        BigDecimal safe = amount == null ? BigDecimal.ZERO : amount;
+        NumberFormat format = NumberFormat.getNumberInstance(Locale.US);
+        // Donation responses also populate edit forms, so never round away cents.
+        format.setMaximumFractionDigits(Math.max(2, safe.scale()));
+        return "R" + format.format(safe);
     }
 
     private String formatInteger(long value) {

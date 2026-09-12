@@ -30,6 +30,6 @@ JSON requests have a 15-second timeout and support caller cancellation. Record d
 
 Row actions stay disabled during mutations, including when a concurrent refresh replaces the rows. Starting an edit clears validation errors from the previous draft.
 
-Backend limitation: `DonationResponse.amount` is formatted to whole rand by `DashboardService.formatCurrency`. Donation submissions retain cents, but reloading a donation currently loses that precision in the response, including the amount used to populate the edit form. Exact editing requires the backend to return an unrounded amount; the frontend cannot reconstruct it from the rounded string.
+Donation responses preserve cents in the existing formatted `amount` string, so reloading and editing a donation retains its exact amount. Dashboard KPI formatting remains unchanged.
 
 Tables keep their existing HTML structure, with sortable header buttons, result counts, donation search, sticky headers, row focus/hover feedback, and keyboard-focusable scrolling regions. Member filters and sorting survive refreshes. Mobile navigation keeps collapsed links out of the tab order, traps focus while open, closes with Escape, and restores focus to the menu control. Focus outlines, skip navigation, reduced-motion styles, and screen-reader announcements use the existing branding and components.
