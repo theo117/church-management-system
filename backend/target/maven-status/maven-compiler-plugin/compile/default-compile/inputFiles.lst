@@ -1,57 +1,57 @@
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/ChurchManagementApplication.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/CorsConfig.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/PasswordConfig.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/config/SecurityConfig.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/AdminController.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/AuthController.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/ChurchManagementController.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/MemberController.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceService.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceTrendPoint.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/CareAlert.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ChurchEvent.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Communication.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Donation.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Fund.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Member.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ReportMetric.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Role.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/VolunteerUpdate.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/AttendanceServiceResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CareAlertResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationUpsertRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationUpsertRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventUpsertRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/FundResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/KpiResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberDetailsResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberUpsertRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/ReportResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/UpcomingEventResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerResponse.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerUpsertRequest.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceServiceRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceTrendPointRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CareAlertRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ChurchEventRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CommunicationRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/DonationRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/FundRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/MemberRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ReportMetricRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/VolunteerUpdateRepository.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/security/CustomUserDetailsService.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/security/JwtAuthenticationFilter.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/security/JwtService.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AdminInitializer.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AuthenticationService.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DashboardService.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DataInitializer.java
-/home/theo/Documents/business/New folder/church-management-system/backend/src/main/java/com/churchmanagement/api/service/MemberService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/ChurchManagementApplication.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/config/CorsConfig.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/config/PasswordConfig.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/config/SecurityConfig.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/AdminController.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/AuthController.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/ChurchManagementController.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/controller/MemberController.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/AttendanceTrendPoint.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/CareAlert.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ChurchEvent.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Communication.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Donation.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Fund.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Member.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/ReportMetric.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/Role.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/domain/VolunteerUpdate.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/AttendanceServiceResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CareAlertResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/CommunicationUpsertRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/DonationUpsertRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/EventUpsertRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/FundResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/KpiResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/LoginResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberDetailsResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/MemberUpsertRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/ReportResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/UpcomingEventResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerResponse.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/dto/VolunteerUpsertRequest.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceServiceRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/AttendanceTrendPointRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CareAlertRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ChurchEventRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/CommunicationRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/DonationRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/FundRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/MemberRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/ReportMetricRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/repository/VolunteerUpdateRepository.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/security/CustomUserDetailsService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/security/JwtAuthenticationFilter.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/security/JwtService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AdminInitializer.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/service/AuthenticationService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DashboardService.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/service/DataInitializer.java
+/home/ubuntu/church-management-system/backend/src/main/java/com/churchmanagement/api/service/MemberService.java

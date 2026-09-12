@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.churchmanagement.api.service.DonationPrecisionTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.245 s -- in com.churchmanagement.api.service.DonationPrecisionTest
