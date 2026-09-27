@@ -2,9 +2,11 @@ package com.churchmanagement.api.service;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.churchmanagement.api.domain.Member;
 import com.churchmanagement.api.dto.LoginRequest;
@@ -32,10 +34,13 @@ public class AuthenticationService {
     public LoginResponse login(LoginRequest request) {
 
         Member member = memberRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("Invalid email or password"));
+                .orElseThrow(this::invalidCredentials);
 
-        if (!passwordEncoder.matches(request.getPassword(), member.getPasswordHash())) {
-            throw new RuntimeException("Invalid email or password");
+        if (!member.isEnabled()
+                || request.getPassword() == null
+                || member.getPasswordHash() == null
+                || !passwordEncoder.matches(request.getPassword(), member.getPasswordHash())) {
+            throw invalidCredentials();
         }
 
         org.springframework.security.core.userdetails.User user =
@@ -53,4 +58,8 @@ public class AuthenticationService {
 
         return new LoginResponse(token);
     }
+
+        private ResponseStatusException invalidCredentials() {
+                return new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid email or password");
+        }
 }

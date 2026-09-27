@@ -1,14 +1,15 @@
 package com.churchmanagement.api.service;
 
+import java.util.List;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.churchmanagement.api.domain.Member;
 import com.churchmanagement.api.domain.Role;
 import com.churchmanagement.api.dto.MemberDetailsResponse;
 import com.churchmanagement.api.dto.MemberRequest;
 import com.churchmanagement.api.repository.MemberRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class MemberService {
@@ -51,10 +52,7 @@ public class MemberService {
         member.setSmallGroup(request.smallGroup());
         member.setLastAttended(request.lastAttended());
 
-        member.setRole(
-                request.role() == null
-                        ? Role.MEMBER
-                        : request.role());
+        member.setRole(Role.MEMBER);
 
         member.setPasswordHash(passwordEncoder.encode("ChangeMe123!"));
         member.setEnabled(true);
@@ -76,10 +74,6 @@ public class MemberService {
         member.setSmallGroup(request.smallGroup());
         member.setLastAttended(request.lastAttended());
 
-        if (request.role() != null) {
-            member.setRole(request.role());
-        }
-
         memberRepository.save(member);
 
         return toResponse(member);
@@ -92,6 +86,14 @@ public class MemberService {
         }
 
         memberRepository.deleteById(id);
+    }
+
+    public MemberDetailsResponse changeRole(Long id, Role role) {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Member not found"));
+        member.setRole(role);
+        memberRepository.save(member);
+        return toResponse(member);
     }
 
     private MemberDetailsResponse toResponse(Member member) {
